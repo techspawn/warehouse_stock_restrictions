@@ -32,13 +32,15 @@
     'website': "http://www.techspawn.com",
 
     'category': 'Warehouse',
-    'version': '0.1',
+    'version': '10.0.0.1',
 
     'depends': ['base', 'stock'],
 
     'data': [
-
-        'users_view.xml',
+        'views/users.xml',
         'security/security.xml', 
     ],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
 }

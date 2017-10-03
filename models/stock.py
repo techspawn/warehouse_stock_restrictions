@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+from odoo import models, fields, api, _
+from odoo.exceptions import Warning
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning
 
 class ResUsers(models.Model):
     _inherit = 'res.users'
@@ -38,5 +38,3 @@ class stock_move(models.Model):
                 raise Warning(message % self.location_id.name)
             elif self.location_dest_id not in user_locations:
                 raise Warning(message % self.location_dest_id.name)
-
-

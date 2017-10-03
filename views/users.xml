@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">usability.default_warehouse.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="preferences" position="after">
+                <group string="Warehouse Restrictions">
+                    <field name="default_picking_type_ids" widget="many2many_tags" attrs="{'invisible': [('login','=', 'admin')]}"/>
+                    <field name="restrict_locations" attrs="{'invisible': [('login','=', 'admin')]}"/>
+                    <field name="stock_location_ids" widget="many2many_tags" attrs="{'invisible': [('restrict_locations','!=', True)]}"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
